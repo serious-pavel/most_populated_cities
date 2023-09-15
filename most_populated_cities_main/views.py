@@ -4,5 +4,5 @@ from django.shortcuts import render
 
 
 def main(request):
-    return render(request, 'most_populated_cities_main/base.html')
+    return render(request, 'most_populated_cities_main/table_cities.html')
 
