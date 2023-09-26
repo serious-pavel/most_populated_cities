@@ -4,12 +4,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="{% static 'img/city-buildings-svgrepo-com-fill.svg' %}" sizes="any" color="red">
-
+    <link rel="shortcut icon" href="{% static 'img/city-buildings-svgrepo-com-fill.svg' %}" sizes="any">
+    <link rel="stylesheet" href="{% static 'css/custom_style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
 
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-{% block content %}{% endblock %}
+<div class="wrapper">
+    <div class="header">Header</div>
+
+    <div class="content">
+    {% block content %}Content{% endblock %}
+    </div>
+
+    <div class="footer">Footer</div>
+</div>
 </body>
 </html>
