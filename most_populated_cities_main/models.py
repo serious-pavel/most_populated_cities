@@ -28,10 +28,16 @@ class Country(models.Model):
     def __str__(self):
         return f"{self.common_name} ({self.Region(self.region).label})"
 
+    class Meta:
+        verbose_name_plural = "countries"
+
 
 class City(models.Model):
     country = models.ForeignKey(Country, on_delete=models.CASCADE)
     name = models.CharField(max_length=50, null=False, unique=True)
     population_23 = models.PositiveIntegerField(null=False)
     population_22 = models.PositiveIntegerField(null=False)
+
+    class Meta:
+        verbose_name_plural = "cities"
 
