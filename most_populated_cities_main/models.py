@@ -26,7 +26,7 @@ class Country(models.Model):
     region = models.CharField(max_length=2, choices=Region.choices, default=Region.ANTARCTICA, null=False)
 
     def __str__(self):
-        return f"{self.common_name} ({self.region})"
+        return f"{self.common_name} ({self.Region(self.region).label})"
 
 
 class City(models.Model):
