@@ -41,3 +41,15 @@ class City(models.Model):
     class Meta:
         verbose_name_plural = "cities"
 
+
+def validate_country_region(sender, instance, **kwargs):
+    valid_values = Country.Region.values
+    if instance.region not in valid_values:
+        from django.core.exceptions import ValidationError
+        raise ValidationError(
+            f'Country "{instance.common_name}" Region "{instance.region}" is not one of the permitted'
+            f' values: {", ".join(valid_values)}')
+
+
+models.signals.pre_save.connect(validate_country_region, sender=Country)
+
