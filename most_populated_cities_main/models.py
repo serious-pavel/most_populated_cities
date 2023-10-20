@@ -6,7 +6,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 class Country(models.Model):
-    class Region(models.TextChoices):
+    class Continent(models.TextChoices):
         EUROPE = "EU", _("Europe")
         ASIA = "AS", _("Asia")
         NORTH_AMERICA = "NA", _("North America")
@@ -23,10 +23,10 @@ class Country(models.Model):
     alpha3_code = models.CharField(max_length=3, null=False, unique=True)
     official_name = models.CharField(max_length=50, null=False, unique=True)
     common_name = models.CharField(max_length=50, null=False, unique=True)
-    region = models.CharField(max_length=2, choices=Region.choices, default=Region.ANTARCTICA, null=False)
+    continent = models.CharField(max_length=2, choices=Continent.choices, default=Continent.ANTARCTICA, null=False)
 
     def __str__(self):
-        return f"{self.common_name} ({self.Region(self.region).label})"
+        return f"{self.common_name} ({self.Continent(self.continent).label})"
 
     class Meta:
         verbose_name_plural = "countries"
@@ -42,14 +42,14 @@ class City(models.Model):
         verbose_name_plural = "cities"
 
 
-def validate_country_region(sender, instance, **kwargs):
-    valid_values = Country.Region.values
-    if instance.region not in valid_values:
+def validate_country_continent(sender, instance, **kwargs):
+    valid_values = Country.Continent.values
+    if instance.continent not in valid_values:
         from django.core.exceptions import ValidationError
         raise ValidationError(
-            f'Country "{instance.common_name}" Region "{instance.region}" is not one of the permitted'
+            f'Country "{instance.common_name}" Region "{instance.continent}" is not one of the permitted'
             f' values: {", ".join(valid_values)}')
 
 
-models.signals.pre_save.connect(validate_country_region, sender=Country)
+models.signals.pre_save.connect(validate_country_continent, sender=Country)
 
