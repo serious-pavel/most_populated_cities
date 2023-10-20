@@ -25,8 +25,12 @@ class Country(models.Model):
     common_name = models.CharField(max_length=50, null=False, unique=True)
     continent = models.CharField(max_length=2, choices=Continent.choices, default=Continent.ANTARCTICA, null=False)
 
+    @property
+    def continent_name(self):
+        return self.Continent(self.continent).label
+
     def __str__(self):
-        return f"{self.common_name} ({self.Continent(self.continent).label})"
+        return f"{self.common_name} ({self.continent_name})"
 
     class Meta:
         verbose_name_plural = "countries"
