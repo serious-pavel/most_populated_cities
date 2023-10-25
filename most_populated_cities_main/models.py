@@ -73,14 +73,20 @@ class City(models.Model):
         verbose_name_plural = "cities"
 
 
-def validate_country_continent(sender, instance, **kwargs):
-    valid_values = Country.Continent.values
-    if instance.continent not in valid_values:
-        from django.core.exceptions import ValidationError
+def validate_country_continent_and_region(sender, instance, **kwargs):
+    from django.core.exceptions import ValidationError
+
+    valid_continent_values = Country.Continent.values
+    if instance.continent not in valid_continent_values:
         raise ValidationError(
-            f'Country "{instance.common_name}" Region "{instance.continent}" is not one of the permitted'
-            f' values: {", ".join(valid_values)}')
+            f'Country "{instance.common_name}" Continent "{instance.continent}" is not one of the permitted'
+            f' values: {", ".join(valid_continent_values)}')
+    valid_region_values = Country.Region.values
+    if instance.region not in valid_region_values:
+        raise ValidationError(
+            f'Country "{instance.common_name}" Region "{instance.region}" is not one of the permitted'
+            f' values: {", ".join(valid_region_values)}')
 
 
-models.signals.pre_save.connect(validate_country_continent, sender=Country)
+models.signals.pre_save.connect(validate_country_continent_and_region, sender=Country)
 
