@@ -49,16 +49,16 @@ id,alpha2,alpha3,official_name,common_name,readable_full_name
 166,cc,cck,Cocos (Keeling) Islands,Cocos (Keeling) Islands,Cocos (Keeling) Islands
 170,co,col,Colombia,Colombia,Colombia
 174,km,com,Comoros,Comoros,Comoros
-178,cg,cog,"Congo, Republic of the",Republic of the Congo,Republic of the Congo
-180,cd,cod,"Congo, Democratic Republic of the",Democratic Republic of the Congo,Democratic Republic of the Congo
+178,cg,cog,"Congo, Republic of the",Congo,Republic of the Congo
+180,cd,cod,"Congo, Democratic Republic of the",DR Congo,Democratic Republic of the Congo
 184,ck,cok,Cook Islands,Cook Islands,Cook Islands
 188,cr,cri,Costa Rica,Costa Rica,Costa Rica
-384,ci,civ,Côte d'Ivoire,Ivory Coast,Côte d'Ivoire
+384,ci,civ,Republic of Côte d'Ivoire,Ivory Coast,Côte d'Ivoire
 191,hr,hrv,Croatia,Croatia,Croatia
 192,cu,cub,Cuba,Cuba,Cuba
-531,cw,cuw,Curaao,Curaao,Curaao
+531,cw,cuw,Curaçao,Curaçao,Curaçao
 196,cy,cyp,Cyprus,Cyprus,Cyprus
-203,cz,cze,Czechia,Czechia,Czechia
+203,cz,cze,Czech Republic,Czechia,Czech Republic
 208,dk,dnk,Denmark,Denmark,Denmark
 262,dj,dji,Djibouti,Djibouti,Djibouti
 212,dm,dma,Dominica,Dominica,Dominica
@@ -99,7 +99,7 @@ id,alpha2,alpha3,official_name,common_name,readable_full_name
 334,hm,hmd,Heard Island and McDonald Islands,Heard Island and McDonald Islands,Heard Island and McDonald Islands
 336,va,vat,Holy See,Holy See,Holy See
 340,hn,hnd,Honduras,Honduras,Honduras
-344,hk,hkg,Hong Kong,Hong Kong,Hong Kong
+344,hk,hkg,Hong Kong Special Administrative Region of the People's Republic of China,Hong Kong,"China, Hong Kong Special Administrative Region"
 348,hu,hun,Hungary,Hungary,Hungary
 352,is,isl,Iceland,Iceland,Iceland
 356,in,ind,India,India,India
@@ -130,7 +130,7 @@ id,alpha2,alpha3,official_name,common_name,readable_full_name
 438,li,lie,Liechtenstein,Liechtenstein,Liechtenstein
 440,lt,ltu,Lithuania,Lithuania,Lithuania
 442,lu,lux,Luxembourg,Luxembourg,Luxembourg
-446,mo,mac,Macao,Macao,Macao
+446,mo,mac,Macao Special Administrative Region of the People's Republic of China,Macao,"China, Macao Special Administrative Region"
 450,mg,mdg,Madagascar,Madagascar,Madagascar
 454,mw,mwi,Malawi,Malawi,Malawi
 458,my,mys,Malaysia,Malaysia,Malaysia
@@ -180,11 +180,11 @@ id,alpha2,alpha3,official_name,common_name,readable_full_name
 620,pt,prt,Portugal,Portugal,Portugal
 630,pr,pri,Puerto Rico,Puerto Rico,Puerto Rico
 634,qa,qat,Qatar,Qatar,Qatar
-638,re,reu,Runion,Runion,Runion
+638,re,reu,Réunion,Réunion,Réunion
 642,ro,rou,Romania,Romania,Romania
 643,ru,rus,Russian Federation,Russia,Russian Federation
 646,rw,rwa,Rwanda,Rwanda,Rwanda
-652,bl,blm,Saint Barthlemy,Saint Barthlemy,Saint Barthlemy
+652,bl,blm,Saint Barthélemy,St. Barts,Saint Barthélemy
 654,sh,shn,"Saint Helena, Ascension and Tristan da Cunha",Saint Helena,"Saint Helena, Ascension and Tristan da Cunha"
 659,kn,kna,Saint Kitts and Nevis,Saint Kitts and Nevis,Saint Kitts and Nevis
 662,lc,lca,Saint Lucia,Saint Lucia,Saint Lucia
@@ -212,7 +212,7 @@ id,alpha2,alpha3,official_name,common_name,readable_full_name
 144,lk,lka,Sri Lanka,Sri Lanka,Sri Lanka
 729,sd,sdn,Sudan,Sudan,Sudan
 740,sr,sur,Suriname,Suriname,Suriname
-744,sj,sjm,Svalbard and Jan Mayen,Svalbard and Jan Mayen,Svalbard and Jan Mayen
+744,sj,sjm,Svalbard and Jan Mayen Islands,Svalbard and Jan Mayen,Svalbard and Jan Mayen
 752,se,swe,Sweden,Sweden,Sweden
 756,ch,che,Switzerland,Switzerland,Switzerland
 760,sy,syr,Syrian Arab Republic,Syria,Syrian Arab Republic
@@ -242,8 +242,8 @@ id,alpha2,alpha3,official_name,common_name,readable_full_name
 862,ve,ven,Venezuela (Bolivarian Republic of),Venezuela,Bolivarian Republic of Venezuela
 704,vn,vnm,Viet Nam,Vietnam,Viet Nam
 92,vg,vgb,Virgin Islands (British),British Virgin Islands,Virgin Islands (British)
-850,vi,vir,Virgin Islands (U.S.),U.S. Virgin Islands,Virgin Islands (U.S.)
-876,wf,wlf,Wallis and Futuna,Wallis and Futuna,Wallis and Futuna
+850,vi,vir,Virgin Islands (U.S.),U.S. Virgin Islands,United States Virgin Islands
+876,wf,wlf,Territory of the Wallis and Futuna Islands,Wallis and Futuna,Wallis and Futuna Islands
 732,eh,esh,Western Sahara,Western Sahara,Western Sahara
 887,ye,yem,Yemen,Yemen,Yemen
 894,zm,zmb,Zambia,Zambia,Zambia
