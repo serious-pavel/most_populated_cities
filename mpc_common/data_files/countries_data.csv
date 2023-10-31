@@ -49,16 +49,16 @@ id,alpha2,alpha3,official_name,common_name,readable_full_name,region,continent
 166,cc,cck,Cocos (Keeling) Islands,Cocos (Keeling) Islands,Cocos (Keeling) Islands,Australia and New Zealand,Oceania
 170,co,col,Colombia,Colombia,Colombia,South America,South America
 174,km,com,Comoros,Comoros,Comoros,Eastern Africa,Africa
-178,cg,cog,"Congo, Republic of the",Republic of the Congo,Republic of the Congo,Middle Africa,Africa
-180,cd,cod,"Congo, Democratic Republic of the",Democratic Republic of the Congo,Democratic Republic of the Congo,Middle Africa,Africa
+178,cg,cog,"Congo, Republic of the",Congo,Republic of the Congo,Middle Africa,Africa
+180,cd,cod,"Congo, Democratic Republic of the",DR Congo,Democratic Republic of the Congo,Middle Africa,Africa
 184,ck,cok,Cook Islands,Cook Islands,Cook Islands,Polynesia,Oceania
 188,cr,cri,Costa Rica,Costa Rica,Costa Rica,Central America,North America
-384,ci,civ,Côte d'Ivoire,Ivory Coast,Côte d'Ivoire,Western Africa,Africa
+384,ci,civ,Republic of Côte d'Ivoire,Ivory Coast,Côte d'Ivoire,Western Africa,Africa
 191,hr,hrv,Croatia,Croatia,Croatia,Southern Europe,Europe
 192,cu,cub,Cuba,Cuba,Cuba,Caribbean,North America
-531,cw,cuw,Curaao,Curaao,Curaao,Caribbean,North America
+531,cw,cuw,Curaçao,Curaçao,Curaçao,Caribbean,North America
 196,cy,cyp,Cyprus,Cyprus,Cyprus,Western Asia,Asia
-203,cz,cze,Czechia,Czechia,Czechia,Eastern Europe,Europe
+203,cz,cze,Czech Republic,Czechia,Czech Republic,Eastern Europe,Europe
 208,dk,dnk,Denmark,Denmark,Denmark,Northern Europe,Europe
 262,dj,dji,Djibouti,Djibouti,Djibouti,Eastern Africa,Africa
 212,dm,dma,Dominica,Dominica,Dominica,Caribbean,North America
@@ -99,7 +99,7 @@ id,alpha2,alpha3,official_name,common_name,readable_full_name,region,continent
 334,hm,hmd,Heard Island and McDonald Islands,Heard Island and McDonald Islands,Heard Island and McDonald Islands,Australia and New Zealand,Oceania
 336,va,vat,Holy See,Holy See,Holy See,Southern Europe,Europe
 340,hn,hnd,Honduras,Honduras,Honduras,Central America,North America
-344,hk,hkg,Hong Kong,Hong Kong,Hong Kong,Eastern Asia,Asia
+344,hk,hkg,Hong Kong Special Administrative Region of the People's Republic of China,Hong Kong,"China, Hong Kong Special Administrative Region",Eastern Asia,Asia
 348,hu,hun,Hungary,Hungary,Hungary,Eastern Europe,Europe
 352,is,isl,Iceland,Iceland,Iceland,Northern Europe,Europe
 356,in,ind,India,India,India,Southern Asia,Asia
@@ -130,7 +130,7 @@ id,alpha2,alpha3,official_name,common_name,readable_full_name,region,continent
 438,li,lie,Liechtenstein,Liechtenstein,Liechtenstein,Western Europe,Europe
 440,lt,ltu,Lithuania,Lithuania,Lithuania,Northern Europe,Europe
 442,lu,lux,Luxembourg,Luxembourg,Luxembourg,Western Europe,Europe
-446,mo,mac,Macao,Macao,Macao,Eastern Asia,Asia
+446,mo,mac,Macao Special Administrative Region of the People's Republic of China,Macao,"China, Macao Special Administrative Region",Eastern Asia,Asia
 450,mg,mdg,Madagascar,Madagascar,Madagascar,Eastern Africa,Africa
 454,mw,mwi,Malawi,Malawi,Malawi,Eastern Africa,Africa
 458,my,mys,Malaysia,Malaysia,Malaysia,South-eastern Asia,Asia
@@ -180,11 +180,11 @@ id,alpha2,alpha3,official_name,common_name,readable_full_name,region,continent
 620,pt,prt,Portugal,Portugal,Portugal,Southern Europe,Europe
 630,pr,pri,Puerto Rico,Puerto Rico,Puerto Rico,Caribbean,North America
 634,qa,qat,Qatar,Qatar,Qatar,Western Asia,Asia
-638,re,reu,Runion,Runion,Runion,Eastern Africa,Africa
+638,re,reu,Réunion,Réunion,Réunion,Eastern Africa,Africa
 642,ro,rou,Romania,Romania,Romania,Eastern Europe,Europe
 643,ru,rus,Russian Federation,Russia,Russian Federation,Eastern Europe,Europe
 646,rw,rwa,Rwanda,Rwanda,Rwanda,Eastern Africa,Africa
-652,bl,blm,Saint Barthlemy,Saint Barthlemy,Saint Barthlemy,Caribbean,North America
+652,bl,blm,Saint Barthélemy,St. Barts,Saint Barthélemy,Caribbean,North America
 654,sh,shn,"Saint Helena, Ascension and Tristan da Cunha",Saint Helena,"Saint Helena, Ascension and Tristan da Cunha",Western Africa,Africa
 659,kn,kna,Saint Kitts and Nevis,Saint Kitts and Nevis,Saint Kitts and Nevis,Caribbean,North America
 662,lc,lca,Saint Lucia,Saint Lucia,Saint Lucia,Caribbean,North America
@@ -212,7 +212,7 @@ id,alpha2,alpha3,official_name,common_name,readable_full_name,region,continent
 144,lk,lka,Sri Lanka,Sri Lanka,Sri Lanka,Southern Asia,Asia
 729,sd,sdn,Sudan,Sudan,Sudan,Northern Africa,Africa
 740,sr,sur,Suriname,Suriname,Suriname,South America,South America
-744,sj,sjm,Svalbard and Jan Mayen,Svalbard and Jan Mayen,Svalbard and Jan Mayen,Northern Europe,Europe
+744,sj,sjm,Svalbard and Jan Mayen Islands,Svalbard and Jan Mayen,Svalbard and Jan Mayen,Northern Europe,Europe
 752,se,swe,Sweden,Sweden,Sweden,Northern Europe,Europe
 756,ch,che,Switzerland,Switzerland,Switzerland,Western Europe,Europe
 760,sy,syr,Syrian Arab Republic,Syria,Syrian Arab Republic,Western Asia,Asia
@@ -241,8 +241,8 @@ id,alpha2,alpha3,official_name,common_name,readable_full_name,region,continent
 862,ve,ven,Venezuela (Bolivarian Republic of),Venezuela,Bolivarian Republic of Venezuela,South America,South America
 704,vn,vnm,Viet Nam,Vietnam,Viet Nam,South-eastern Asia,Asia
 92,vg,vgb,Virgin Islands (British),British Virgin Islands,Virgin Islands (British),Caribbean,North America
-850,vi,vir,Virgin Islands (U.S.),U.S. Virgin Islands,Virgin Islands (U.S.),Caribbean,North America
-876,wf,wlf,Wallis and Futuna,Wallis and Futuna,Wallis and Futuna,Polynesia,Oceania
+850,vi,vir,Virgin Islands (U.S.),U.S. Virgin Islands,United States Virgin Islands,Caribbean,North America
+876,wf,wlf,Territory of the Wallis and Futuna Islands,Wallis and Futuna,Wallis and Futuna Islands,Polynesia,Oceania
 732,eh,esh,Western Sahara,Western Sahara,Western Sahara,Northern Africa,Africa
 887,ye,yem,Yemen,Yemen,Yemen,Western Asia,Asia
 894,zm,zmb,Zambia,Zambia,Zambia,Eastern Africa,Africa
