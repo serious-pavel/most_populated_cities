@@ -19,6 +19,11 @@ with (open('data_files/countries_common_names.csv', mode='r') as csv_common_name
                 row_cn['region'] = row_reg['Region 1']
                 row_cn['continent'] = row_reg['Continent']
 
+                if not(row_cn["common_name"] == row_reg["Country or Area"] or
+                        row_cn["readable_full_name"] == row_reg["Country or Area"] or
+                        row_cn["official_name"] == row_reg["Country or Area"]):
+                    print(f'{row_cn["common_name"]}[{row_cn["alpha3"]}] != {row_reg["Country or Area"]}')
+
                 csv_countries_writer.writerow(row_cn)
         if not has_matches:
             print(f'\t{row_cn["common_name"]} ({row_cn["id"]}) has no matches'
