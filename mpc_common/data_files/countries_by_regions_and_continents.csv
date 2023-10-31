@@ -55,7 +55,7 @@ No,Country or Area,ISO-alpha3 Code,M49 Code,Region 1,Region 2,Continent
 54,Congo,COG,178,Middle Africa,Sub-Saharan Africa,Africa
 55,Cook Islands,COK,184,Polynesia,,Oceania
 56,Costa Rica,CRI,188,Central America,Latin America and the Caribbean,North America
-57,Côte d’Ivoire,CIV,384,Western Africa,Sub-Saharan Africa,Africa
+57,Côte d'Ivoire,CIV,384,Western Africa,Sub-Saharan Africa,Africa
 58,Croatia,HRV,191,Southern Europe,,Europe
 59,Cuba,CUB,192,Caribbean,Latin America and the Caribbean,North America
 60,Curaçao,CUW,531,Caribbean,Latin America and the Caribbean,North America
@@ -188,7 +188,7 @@ No,Country or Area,ISO-alpha3 Code,M49 Code,Region 1,Region 2,Continent
 187,Saint Helena,SHN,654,Western Africa,Sub-Saharan Africa,Africa
 188,Saint Kitts and Nevis,KNA,659,Caribbean,Latin America and the Caribbean,North America
 189,Saint Lucia,LCA,662,Caribbean,Latin America and the Caribbean,North America
-190,Saint Martin (French Part),MAF,663,Caribbean,Latin America and the Caribbean,North America
+190,Saint Martin (French part),MAF,663,Caribbean,Latin America and the Caribbean,North America
 191,Saint Pierre and Miquelon,SPM,666,Northern America,,North America
 192,Saint Vincent and the Grenadines,VCT,670,Caribbean,Latin America and the Caribbean,North America
 193,Samoa,WSM,882,Polynesia,,Oceania
