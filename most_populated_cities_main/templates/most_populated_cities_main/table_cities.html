@@ -3,3 +3,9 @@
 {% block title %}
 Most populated cities
 {% endblock %}
+
+{% block content %}
+{% for city in cities %}
+<p>{{city.name}} ({{ city.country.common_name }} <span class="fi fi-xx fi-{{city.country.alpha2_code}}"></span>)
+{% endfor %}
+{% endblock %}
