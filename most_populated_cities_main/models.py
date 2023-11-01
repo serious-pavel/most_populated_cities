@@ -75,6 +75,9 @@ class City(models.Model):
     population_23 = models.PositiveIntegerField(null=False)
     population_22 = models.PositiveIntegerField(null=False)
 
+    def __str__(self):
+        return f"{self.name} ({self.country.common_name})"
+
     class Meta:
         verbose_name_plural = "cities"
 
