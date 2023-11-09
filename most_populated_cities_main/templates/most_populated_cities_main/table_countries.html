@@ -8,8 +8,8 @@ Most populated cities
 <table>
     <thead>
         <tr>
+            <th>№</th>
             <th>Common Name</th>
-            <th>Flag</th>
             <th>Continent</th>
             <th>Region</th>
         </tr>
@@ -17,8 +17,8 @@ Most populated cities
     <tbody>
         {% for country in countries %}
         <tr>
-            <td>{{ country.common_name }}</td>
-            <td><span class="fi fi-xx fi-{{country.alpha2_code}}"></span></td>
+            <td>{{ forloop.counter }}</td>
+            <td><span class="fi fi-xx fi-{{country.alpha2_code}}"></span> {{ country.common_name }}</td>
             <td>{{ country.continent_name }}</td>
             <td>{{ country.region_name }}</td>
         </tr>
