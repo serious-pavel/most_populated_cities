@@ -10,5 +10,5 @@ def city_page(request):
 
 
 def country_page(request):
-    countries = Country.objects.all()
+    countries = Country.objects.all().order_by('common_name')
     return render(request, 'most_populated_cities_main/table_countries.html', context={'countries': countries})
