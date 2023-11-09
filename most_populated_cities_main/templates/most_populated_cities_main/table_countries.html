@@ -5,7 +5,25 @@ Most populated cities
 {% endblock %}
 
 {% block content %}
-{% for country in countries %}
-<p>{{country.common_name}} <span class="fi fi-xx fi-{{country.alpha2_code}}"></span> {{country.continent_name}} ({{ country.region_name }})
-{% endfor %}
+<table>
+    <thead>
+        <tr>
+            <th>Common Name</th>
+            <th>Flag</th>
+            <th>Continent</th>
+            <th>Region</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for country in countries %}
+        <tr>
+            <td>{{ country.common_name }}</td>
+            <td><span class="fi fi-xx fi-{{country.alpha2_code}}"></span></td>
+            <td>{{ country.continent_name }}</td>
+            <td>{{ country.region_name }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
 {% endblock %}
