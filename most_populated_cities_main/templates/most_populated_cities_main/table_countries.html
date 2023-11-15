@@ -32,6 +32,7 @@ Most populated cities
         <option value="40" {% if per_page == "40" %}selected{% endif %}>40</option>
     </select>
     <input type="submit" value="items on page">
+    <input type="hidden" name="page" value="{{ page_obj.number }}">
 </form>
 <div class="pagination">
     <span class="step-links">
