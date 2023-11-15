@@ -25,6 +25,14 @@ Most populated cities
         {% endfor %}
     </tbody>
 </table>
+<form action="{% url 'most_populated_cities_main:countries' %}">
+    <select name="choice">
+        <option value="15" {% if per_page == "15" %}selected{% endif %}>15</option>
+        <option value="20" {% if per_page == "20" %}selected{% endif %}>20</option>
+        <option value="40" {% if per_page == "40" %}selected{% endif %}>40</option>
+    </select>
+    <input type="submit" value="items on page">
+</form>
 <div class="pagination">
     <span class="step-links">
         {% if page_obj.has_previous %}
@@ -33,7 +41,7 @@ Most populated cities
         {% endif %}
 
         <span class="current">
-            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
         </span>
 
         {% if page_obj.has_next %}
