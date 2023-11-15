@@ -14,7 +14,7 @@ def country_page(request):
     countries = Country.objects.all().order_by('common_name')
     per_page = request.GET.get("choice")
     if not per_page:
-        per_page = 20
+        per_page = "20"
     paginator = Paginator(countries, per_page)
 
     page_number = request.GET.get("page")
