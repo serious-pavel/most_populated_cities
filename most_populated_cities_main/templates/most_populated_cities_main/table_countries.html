@@ -33,6 +33,7 @@ Most populated cities
     </select>
     <input type="submit" value="items on page">
     <input type="hidden" name="page" value="{{ page_obj.number }}">
+    <input type="hidden" name="index" value="{{ page_obj.start_index }}">
 </form>
 <div class="pagination">
     <span class="step-links">

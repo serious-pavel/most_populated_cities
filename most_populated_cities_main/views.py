@@ -17,7 +17,14 @@ def country_page(request):
         per_page = "20"
     paginator = Paginator(countries, per_page)
 
+    index = request.GET.get("index")
     page_number = request.GET.get("page")
+    if index:
+        for i in range(1, paginator.num_pages + 1):
+            if int(index) < i * int(per_page):
+                page_number = str(i)
+                break
+
     page_obj = paginator.get_page(page_number)
     item_counter = (page_obj.number - 1) * paginator.per_page
 
