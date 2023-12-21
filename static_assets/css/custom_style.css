@@ -74,3 +74,9 @@ div{
     height: 40px;
 }
 
+button.sort_btn {
+    background-color: lightslategrey;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+}
