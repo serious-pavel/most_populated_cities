@@ -9,7 +9,19 @@ Most populated cities
     <thead>
         <tr>
             <th>№</th>
-            <th>Common Name</th>
+            <th>
+                <form action="{% url 'most_populated_cities_main:countries' %}">
+                    <button class="sort_btn" >Common Name
+                        {% if sort_by == "common_name" %} v
+                            <input type="hidden" name="sort_by" value="-common_name">
+                        {% elif sort_by == "-common_name" %} ^
+                            <input type="hidden" name="sort_by" value="common_name">
+                        {% endif %}
+                    <input type="hidden" name="index" value="{{ page_obj.start_index }}">
+                    <input type="hidden" name="choice" value="{{ per_page }}">
+                    </button>
+                </form>
+            </th>
             <th>Continent</th>
             <th>Region</th>
         </tr>
