@@ -22,8 +22,36 @@ Most populated cities
                     </button>
                 </form>
             </th>
-            <th>Continent</th>
-            <th>Region</th>
+            <th>
+                <form action="{% url 'most_populated_cities_main:countries' %}">
+                    <button class="sort_btn" >Continent
+                        {% if sort_by == "continent" %} v
+                            <input type="hidden" name="sort_by" value="-continent">
+                        {% elif sort_by == "-continent" %} ^
+                            <input type="hidden" name="sort_by" value="continent">
+                        {% else %}
+                            <input type="hidden" name="sort_by" value="continent">
+                        {% endif %}
+                    <input type="hidden" name="index" value="{{ page_obj.start_index }}">
+                    <input type="hidden" name="choice" value="{{ per_page }}">
+                    </button>
+                </form>
+            </th>
+            <th>
+                <form action="{% url 'most_populated_cities_main:countries' %}">
+                    <button class="sort_btn" >Region
+                        {% if sort_by == "region" %} v
+                            <input type="hidden" name="sort_by" value="-region">
+                        {% elif sort_by == "-region" %} ^
+                            <input type="hidden" name="sort_by" value="region">
+                        {% else %}
+                            <input type="hidden" name="sort_by" value="region">
+                        {% endif %}
+                    <input type="hidden" name="index" value="{{ page_obj.start_index }}">
+                    <input type="hidden" name="choice" value="{{ per_page }}">
+                    </button>
+                </form>
+            </th>
         </tr>
     </thead>
     <tbody>
