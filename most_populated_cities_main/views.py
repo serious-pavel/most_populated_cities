@@ -13,7 +13,7 @@ def city_page(request):
 def country_page(request):
     sort_by = request.GET.get("sort_by") or "common_name"
     countries = Country.objects.all().order_by(sort_by)
-    per_page = request.GET.get("choice") or "20"
+    per_page = request.GET.get("per_page") or "20"
     paginator = Paginator(countries, per_page)
 
     index = request.GET.get("index")

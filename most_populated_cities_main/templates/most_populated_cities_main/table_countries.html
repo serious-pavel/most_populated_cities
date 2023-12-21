@@ -18,7 +18,7 @@ Most populated cities
                             <input type="hidden" name="sort_by" value="common_name">
                         {% endif %}
                     <input type="hidden" name="index" value="{{ page_obj.start_index }}">
-                    <input type="hidden" name="choice" value="{{ per_page }}">
+                    <input type="hidden" name="per_page" value="{{ per_page }}">
                     </button>
                 </form>
             </th>
@@ -33,7 +33,7 @@ Most populated cities
                             <input type="hidden" name="sort_by" value="continent">
                         {% endif %}
                     <input type="hidden" name="index" value="{{ page_obj.start_index }}">
-                    <input type="hidden" name="choice" value="{{ per_page }}">
+                    <input type="hidden" name="per_page" value="{{ per_page }}">
                     </button>
                 </form>
             </th>
@@ -48,7 +48,7 @@ Most populated cities
                             <input type="hidden" name="sort_by" value="region">
                         {% endif %}
                     <input type="hidden" name="index" value="{{ page_obj.start_index }}">
-                    <input type="hidden" name="choice" value="{{ per_page }}">
+                    <input type="hidden" name="per_page" value="{{ per_page }}">
                     </button>
                 </form>
             </th>
@@ -66,7 +66,7 @@ Most populated cities
     </tbody>
 </table>
 <form action="{% url 'most_populated_cities_main:countries' %}">
-    <select name="choice">
+    <select name="per_page">
         <option value="15" {% if per_page == "15" %}selected{% endif %}>15</option>
         <option value="20" {% if per_page == "20" %}selected{% endif %}>20</option>
         <option value="40" {% if per_page == "40" %}selected{% endif %}>40</option>
@@ -79,8 +79,8 @@ Most populated cities
 <div class="pagination">
     <span class="step-links">
         {% if page_obj.has_previous %}
-            <a href="?page=1&choice={{ per_page }}&sort_by={{ sort_by }}">&laquo; first</a>
-            <a href="?page={{ page_obj.previous_page_number }}&choice={{ per_page }}&sort_by={{ sort_by }}">previous</a>
+            <a href="?page=1&per_page={{ per_page }}&sort_by={{ sort_by }}">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}&per_page={{ per_page }}&sort_by={{ sort_by }}">previous</a>
         {% endif %}
 
         <span class="current">
@@ -88,8 +88,8 @@ Most populated cities
         </span>
 
         {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}&choice={{ per_page }}&sort_by={{ sort_by }}">next</a>
-            <a href="?page={{ page_obj.paginator.num_pages }}&choice={{ per_page }}&sort_by={{ sort_by }}">last &raquo;</a>
+            <a href="?page={{ page_obj.next_page_number }}&per_page={{ per_page }}&sort_by={{ sort_by }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}&per_page={{ per_page }}&sort_by={{ sort_by }}">last &raquo;</a>
         {% endif %}
     </span>
 </div>
