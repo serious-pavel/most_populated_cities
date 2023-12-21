@@ -46,12 +46,13 @@ Most populated cities
     <input type="submit" value="items on page">
     <input type="hidden" name="page" value="{{ page_obj.number }}">
     <input type="hidden" name="index" value="{{ page_obj.start_index }}">
+    <input type="hidden" name="sort_by" value="{{ sort_by }}">
 </form>
 <div class="pagination">
     <span class="step-links">
         {% if page_obj.has_previous %}
-            <a href="?page=1&choice={{ per_page }}">&laquo; first</a>
-            <a href="?page={{ page_obj.previous_page_number }}&choice={{ per_page }}">previous</a>
+            <a href="?page=1&choice={{ per_page }}&sort_by={{ sort_by }}">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}&choice={{ per_page }}&sort_by={{ sort_by }}">previous</a>
         {% endif %}
 
         <span class="current">
@@ -59,8 +60,8 @@ Most populated cities
         </span>
 
         {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}&choice={{ per_page }}">next</a>
-            <a href="?page={{ page_obj.paginator.num_pages }}&choice={{ per_page }}">last &raquo;</a>
+            <a href="?page={{ page_obj.next_page_number }}&choice={{ per_page }}&sort_by={{ sort_by }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}&choice={{ per_page }}&sort_by={{ sort_by }}">last &raquo;</a>
         {% endif %}
     </span>
 </div>
