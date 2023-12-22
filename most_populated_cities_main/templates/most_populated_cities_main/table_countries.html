@@ -67,9 +67,9 @@ Most populated cities
 </table>
 <form action="{% url 'most_populated_cities_main:countries' %}">
     <select name="per_page">
-        <option value="15" {% if per_page == "15" %}selected{% endif %}>15</option>
-        <option value="20" {% if per_page == "20" %}selected{% endif %}>20</option>
-        <option value="40" {% if per_page == "40" %}selected{% endif %}>40</option>
+        {% for opt in per_page_options %}
+        <option value="{{ opt }}" {% if per_page == opt|stringformat:"i" %}selected{% endif %}>{{ opt }}</option>
+        {% endfor %}
     </select>
     <input type="submit" value="items on page">
     <input type="hidden" name="page" value="{{ page_obj.number }}">
