@@ -5,20 +5,29 @@
 
 html,
 body {
-    height: 100%;
-}
-
-.wrapper {
-    position: relative;
-    height: 100%;
-    padding: 0 0 160px;
-    box-sizing: border-box;
+    height: 100vh;
 }
 
 body {
+    background-color: ghostwhite;
+    position: relative;
     font-family: 'Ubuntu', sans-serif;
     line-height: 1.3;
     text-align: center;
+}
+
+.header,
+.footer {
+    color: whitesmoke;
+    background-color: slategrey;
+    height: 40px;
+}
+
+.content {
+    overflow: auto;
+    height: calc(100% - 80px);
+    padding: 20px 0px;
+    box-sizing: border-box;
 }
 
 table {
@@ -46,36 +55,8 @@ th {
     background-color: lightslategrey;
 }
 
-div{
-    background-color: whitesmoke;
-}
-
-.header {
-    color: whitesmoke;
-    background-color: slategrey;
-    height: 40px;
-    margin-bottom: 40px;
-
-}
-.content {
-    background-color: ghostwhite;
-    overflow: auto;
-    height:100%;
-    padding: 0px 20px 0px;
-}
-
-.footer {
-    background-color: lightslategrey;
-    color: whitesmoke;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 40px;
-}
-
 button.sort_btn {
-    background-color: lightslategrey;
+    background-color: transparent;
     border: none;
     font-size: 16px;
     font-weight: 600;
