@@ -18,8 +18,6 @@ class Country(models.Model):
         AFRICA = "AF", _("Africa")
         OCEANIA = "OC", _("Oceania")
         ANTARCTICA = "AN", _("Antarctica")
-        # from most_populated_cities_main.models import Country, get_key_name
-        # Country.Region[get_key_name('South-eastern Asia')]
 
     class Region(models.TextChoices):
         SOUTHERN_ASIA = "S_AS", _("Southern Asia")
