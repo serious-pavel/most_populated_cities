@@ -13,8 +13,8 @@ jobs:
     steps:
       - name: Display the ENVIRONMENT
         run: |
-          echo "Environment is ${{ secrets.ENVIRONMENT }}"
-          echo "Environment is ${{ secrets.test.ENVIRONMENT }}"
+          echo "Environment is ${{ vars.ENVIRONMENT }}"
+          echo "Environment is ${{ vars.test.ENVIRONMENT }}"
 
       - name: Checkout repository
         uses: actions/checkout@v2
