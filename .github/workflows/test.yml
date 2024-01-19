@@ -17,18 +17,22 @@ jobs:
       - name: Display the ENVIRONMENT
         run: |
           echo "Environment is ${{ vars.ENVIRONMENT }}"
-          echo "Environment is ${{ vars.test.ENVIRONMENT }}"
           echo "ENV is ${{ vars.ENV }}"
-          echo "ENV is ${{ vars.test.ENV }}"
 
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+
+      - name: Authenticate Google Cloud SDK
+        uses: google-github-actions/auth@v2
+        with:
+          credentials: ${{ secrets.GCP_SA_KEY }}
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
 
       - name: Set up Google Cloud SDK
         uses: google-github-actions/setup-gcloud@v2
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
-          service_account_key: ${{ secrets.GCP_SA_KEY }}
+#          service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
 
 #      - name: Configure Docker to use the gcloud command-line tool as a credential helper
