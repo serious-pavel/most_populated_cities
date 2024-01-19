@@ -1,0 +1,43 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - test
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Display the ENVIRONMENT
+        run: echo "Environment is $ENVIRONMENT"
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+        with:
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          export_default_credentials: true
+
+#      - name: Configure Docker to use the gcloud command-line tool as a credential helper
+#        run: |
+#          gcloud auth configure-docker
+#
+#      - name: Copy GitHub secrets to .env
+#        run: |
+#          echo "DATABASE_URL=$DATABASE_URL" > .env
+#
+#      - name: Build and push Docker image to Google Container Registry
+#        run: |
+#          docker build -t gcr.io/${{ secrets.GOOGLE_PROJECT_ID }}/your_image_name:latest .
+#          docker push gcr.io/${{ secrets.GOOGLE_PROJECT_ID }}/your_image_name:latest
+# deploy:
+#    steps:
+#    - name: Deploy to App Engine
+#      run: |
+#        gcloud app deploy --quiet
