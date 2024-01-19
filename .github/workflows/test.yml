@@ -10,6 +10,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    environment:
+      name: ${{ github.ref_name }}
+
     steps:
       - name: Display the ENVIRONMENT
         run: |
