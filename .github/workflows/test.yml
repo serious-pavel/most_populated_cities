@@ -16,7 +16,6 @@ jobs:
     steps:
       - name: Display the ENVIRONMENT
         run: |
-          echo "Environment is ${{ vars.ENVIRONMENT }}"
           echo "ENV is ${{ vars.ENV }}"
 
       - name: Checkout repository
@@ -33,13 +32,15 @@ jobs:
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
 
-#      - name: Configure Docker to use the gcloud command-line tool as a credential helper
-#        run: |
-#          gcloud auth configure-docker
-#
-#      - name: Copy GitHub secrets to .env
-#        run: |
-#          echo "DATABASE_URL=$DATABASE_URL" > .env
+      - name: Configure Docker to use the gcloud command-line tool as a credential helper
+        run: |
+          gcloud auth configure-docker
+
+      - name: Copy GitHub secrets to .env
+        run: |
+          echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" > .env
+          echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" >> .env
+          echo "DEBUG=${{ DEBUG }}" >> .env
 #
 #      - name: Build and push Docker image to Google Container Registry
 #        run: |
