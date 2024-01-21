@@ -40,7 +40,7 @@ jobs:
         run: |
           echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" > .env
           echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" >> .env
-          echo "DEBUG=${{ DEBUG }}" >> .env
+          echo "DEBUG=${{ secrets.DEBUG }}" >> .env
 #
 #      - name: Build and push Docker image to Google Container Registry
 #        run: |
