@@ -44,8 +44,8 @@ jobs:
 
       - name: Build and Push Docker image
         run: |
-          docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/mpc-${{ vars.ENV }}:${{ github.sha }} .
-          docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/mpc-${{ vars.ENV }}:${{ github.sha }}
+          docker build -t pkg.dev/${{ secrets.GCP_PROJECT_ID }}/mpc-${{ vars.ENV }}:${{ github.sha }} .
+          docker push pkg.dev/${{ secrets.GCP_PROJECT_ID }}/mpc-${{ vars.ENV }}:${{ github.sha }}
 #
 #      - name: Build and push Docker image to Google Container Registry
 #        run: |
