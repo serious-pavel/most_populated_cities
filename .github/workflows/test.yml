@@ -44,9 +44,12 @@ jobs:
 
       - name: Build and Push Docker image
         run: |
-          docker build -t pkg.dev/${{ secrets.GCP_PROJECT_ID }}/mpc-${{ vars.ENV }}:${{ github.sha }} .
-          docker push pkg.dev/${{ secrets.GCP_PROJECT_ID }}/mpc-${{ vars.ENV }}:${{ github.sha }}
-#
+#          docker build -t pkg.dev/${{ secrets.GCP_PROJECT_ID }}/mpc-${{ vars.ENV }}:${{ github.sha }} .
+#          docker push pkg.dev/${{ secrets.GCP_PROJECT_ID }}/mpc-${{ vars.ENV }}:${{ github.sha }}
+          docker build -t europe-west3-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/mpc/mpc-${{ vars.ENV }}:${{ github.sha }} .
+          docker push europe-west3-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/mpc/mpc-${{ vars.ENV }}:${{ github.sha }}
+#<your-gar-region>-docker.pkg.dev/<your-project-id>/<your-gar-repo-name>/<your-docker-image-name>:${{ steps.get-tag.outputs.short_ref }}
+#europe-west3-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/mpc/mpc-${{ vars.ENV }}:${{ github.sha }}
 #      - name: Build and push Docker image to Google Container Registry
 #        run: |
 #          docker build -t gcr.io/${{ secrets.GOOGLE_PROJECT_ID }}/your_image_name:latest .
