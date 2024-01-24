@@ -13,7 +13,7 @@ RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Prepare application
-#RUN chmod +x /app/manage.py
+RUN chmod +x /app/manage.py
 RUN ./manage.py migrate
 RUN ./manage.py update_or_create_countries
 RUN ./manage.py update_or_create_cities
