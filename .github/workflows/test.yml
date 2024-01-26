@@ -45,7 +45,7 @@ jobs:
       - name: Build and Push Docker image
         run: |
           docker build -t europe-west3-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/mpc/mpc-${{ vars.ENV }}:${{ github.sha }} .
-          docker push europe-west3-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/mpc/mpc-${{ vars.ENV }}:${{ github.sha }}
+          docker push europe-west3-docker.pkg.dev/most-populated-cities/mpc/mpc-${{ vars.ENV }}:${{ github.sha }}
 #          docker build -t pkg.dev/${{ secrets.GCP_PROJECT_ID }}/mpc-${{ vars.ENV }}:${{ github.sha }} .
 #          docker push pkg.dev/${{ secrets.GCP_PROJECT_ID }}/mpc-${{ vars.ENV }}:${{ github.sha }}
 
