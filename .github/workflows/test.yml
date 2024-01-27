@@ -1,14 +1,12 @@
 name: CI/CD
-
-env:
-  PROJECT_REGION: europe-west3
-  IMAGE_URL: ${{ env.PROJECT_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/mpc/mpc-${{ vars.ENV }}:${{ github.sha }}
-
 on:
   push:
     branches:
       - test
       - main
+
+env:
+  IMAGE_URL: ${{ vars.PROJECT_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/mpc/mpc-${{ vars.ENV }}:${{ github.sha }}
 
 jobs:
   build:
