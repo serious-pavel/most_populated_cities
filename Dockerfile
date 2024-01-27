@@ -14,6 +14,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Prepare application
 RUN chmod +x /app/manage.py
+RUN chmod +x /app/entrypoint.py
 
 # Run Application
 CMD /bin/sh -c "./entrypoint.sh"
