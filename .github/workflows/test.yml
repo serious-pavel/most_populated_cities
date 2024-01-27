@@ -1,5 +1,9 @@
 name: CI/CD
 
+env:
+  PROJECT_REGION: europe-west3
+  IMAGE_URL: ${{ env.PROJECT_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/mpc/mpc-${{ vars.ENV }}:${{ github.sha }}
+
 on:
   push:
     branches:
@@ -21,6 +25,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Copy GitHub secrets to .env
+        run: |
+          echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" > .env
+          echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" >> .env
+          echo "DEBUG=${{ secrets.DEBUG }}" >> .env
+
       - name: Authenticate Google Cloud SDK
         uses: google-github-actions/auth@v2
         with:
@@ -32,33 +42,18 @@ jobs:
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
 
-      - name: Configure Docker to use the gcloud command-line tool as a credential helper
+      - name: Configure Docker
         run: |
-          gcloud auth configure-docker
-
-      - name: Copy GitHub secrets to .env
-        run: |
-          echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" > .env
-          echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" >> .env
-          echo "DEBUG=${{ secrets.DEBUG }}" >> .env
+          gcloud auth configure-docker ${{ env.PROJECT_REGION }}-docker.pkg.dev
 
       - name: Build Docker image
         run: |
-          docker build -t europe-west3-docker.pkg.dev/most-populated-cities/mpc/mpc-${{ vars.ENV }}:${{ github.sha }} .
+          docker build -t ${{ IMAGE_URL }} .
 
       - name: Push Docker image
         run: |
-          gcloud auth configure-docker europe-west3-docker.pkg.dev
-          docker push europe-west3-docker.pkg.dev/most-populated-cities/mpc/mpc-${{ vars.ENV }}:${{ github.sha }}
-#          docker build -t pkg.dev/${{ secrets.GCP_PROJECT_ID }}/mpc-${{ vars.ENV }}:${{ github.sha }} .
-#          docker push pkg.dev/${{ secrets.GCP_PROJECT_ID }}/mpc-${{ vars.ENV }}:${{ github.sha }}
+          docker push ${{ IMAGE_URL }}
 
-#<your-gar-region>-docker.pkg.dev/<your-project-id>/<your-gar-repo-name>/<your-docker-image-name>:${{ steps.get-tag.outputs.short_ref }}
-#europe-west3-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/mpc/mpc-${{ vars.ENV }}:${{ github.sha }}
-#      - name: Build and push Docker image to Google Container Registry
-#        run: |
-#          docker build -t gcr.io/${{ secrets.GOOGLE_PROJECT_ID }}/your_image_name:latest .
-#          docker push gcr.io/${{ secrets.GOOGLE_PROJECT_ID }}/your_image_name:latest
 # deploy:
 #    steps:
 #    - name: Deploy to App Engine
