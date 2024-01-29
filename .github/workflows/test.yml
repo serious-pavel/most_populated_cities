@@ -75,7 +75,7 @@ jobs:
 
       - name: Auth app
         run: |
-          gcloud auth application-default login
+          gcloud auth application-default login --quiet
 
       - name: Deploy to App Engine
         run: |
