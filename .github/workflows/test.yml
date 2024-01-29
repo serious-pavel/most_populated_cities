@@ -73,9 +73,9 @@ jobs:
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
 
-      - name: Configure Docker
+      - name: Auth app
         run: |
-          gcloud auth configure-docker ${{ vars.PROJECT_REGION }}-docker.pkg.dev
+          gcloud auth application-default
 
       - name: Deploy to App Engine
         run: |
