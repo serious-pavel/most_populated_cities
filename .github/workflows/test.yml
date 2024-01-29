@@ -26,8 +26,8 @@ jobs:
 
       - name: Copy GitHub secrets to .env
         run: |
-          echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" > .env
-          echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" >> .env
+          echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" > .env
+          echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> .env
           echo "DEBUG=${{ secrets.DEBUG }}" >> .env
 
       - name: Authenticate Google Cloud SDK
