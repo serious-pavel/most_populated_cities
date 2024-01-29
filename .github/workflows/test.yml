@@ -28,7 +28,7 @@ jobs:
         run: |
           echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" > .env
           echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> .env
-          echo "DEBUG=${{ secrets.DEBUG }}" >> .env
+          echo "DEBUG=${{ vars.DEBUG }}" >> .env
 
       - name: Authenticate Google Cloud SDK
         uses: google-github-actions/auth@v2
