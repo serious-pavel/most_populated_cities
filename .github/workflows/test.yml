@@ -65,7 +65,6 @@ jobs:
 
       - name: Setup variables for deployment
         run: |
-          echo "service: mpc-${{ vars.ENV }}" >> app.yaml
           echo "beta_settings:" >> app.yaml
           echo "  cloud_sql_instances: ${{ secrets.GCP_PROJECT_ID }}:${{ vars.PROJECT_REGION }}:mpc" >> app.yaml
 
@@ -81,4 +80,4 @@ jobs:
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
           image_url: ${{ env.IMAGE_URL }}:${{ github.sha }}
-          version: mpc-${{ vars.ENV }}
+          version: ${{ vars.ENV }}
