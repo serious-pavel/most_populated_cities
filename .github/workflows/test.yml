@@ -63,6 +63,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Setup variables for deployment
+        run: |
+          echo "service: mpc-${{ vars.ENV }}" >> app.yaml
+          echo "beta_settings:" >> app.yaml
+          echo "  cloud_sql_instances: ${{ secrets.GCP_PROJECT_ID }}:${{ vars.PROJECT_REGION }}:mpc" >> app.yaml
+          echo "version: mpc-${{ vars.ENV }}" >> app.yaml
+
       - name: Authenticate Google Cloud SDK
         uses: google-github-actions/auth@v2
         with:
