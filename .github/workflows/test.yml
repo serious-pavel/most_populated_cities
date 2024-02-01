@@ -27,7 +27,7 @@ jobs:
       - name: Copy GitHub secrets to .env
         run: |
           echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" > .env
-          echo "DATABASE_URL=sqlite:///db.sqlite3" >> .env
+          echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> .env
           echo "DEBUG=${{ vars.DEBUG }}" >> .env
 
       - name: Authenticate Google Cloud SDK
@@ -63,10 +63,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup variables for deployment
-        run: |
-          echo "beta_settings:" >> app.yaml
-          echo "  cloud_sql_instances: ${{ secrets.GCP_PROJECT_ID }}:${{ vars.PROJECT_REGION }}:mpc" >> app.yaml
+#      - name: Setup variables for deployment
+#        run: |
+#          echo "beta_settings:" >> app.yaml
+#          echo "  cloud_sql_instances: ${{ secrets.GCP_PROJECT_ID }}:${{ vars.PROJECT_REGION }}:mpc" >> app.yaml
 
       - name: Authenticate Google Cloud SDK
         uses: google-github-actions/auth@v2
