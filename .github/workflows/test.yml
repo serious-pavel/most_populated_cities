@@ -8,11 +8,9 @@ on:
 env:
   IMAGE_URL: ${{ vars.PROJECT_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/mpc/mpc-${{ vars.ENV }}
 
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
     environment:
       name: ${{ github.ref_name }}
 
@@ -62,11 +60,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-#      - name: Setup variables for deployment
-#        run: |
-#          echo "beta_settings:" >> app.yaml
-#          echo "  cloud_sql_instances: ${{ secrets.GCP_PROJECT_ID }}:${{ vars.PROJECT_REGION }}:mpc" >> app.yaml
 
       - name: Authenticate Google Cloud SDK
         uses: google-github-actions/auth@v2
