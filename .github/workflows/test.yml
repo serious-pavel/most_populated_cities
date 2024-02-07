@@ -60,9 +60,15 @@ jobs:
     environment:
       name: ${{ github.ref_name }}
 
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Set App Engine service name
+        if: ${{ vars.ENV }} != 'main'
+        run: |
+          echo "service: ${{ vars.ENV }}" > app.yaml
 
       - name: Authenticate Google Cloud SDK
         uses: google-github-actions/auth@v2
