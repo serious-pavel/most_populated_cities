@@ -68,7 +68,7 @@ jobs:
       - name: Set App Engine service name
         if: ${{ vars.ENV }} != 'main'
         run: |
-          echo "service: ${{ vars.ENV }}" > app.yaml
+          echo "service: ${{ vars.ENV }}" >> app.yaml
 
       - name: Authenticate Google Cloud SDK
         uses: google-github-actions/auth@v2
