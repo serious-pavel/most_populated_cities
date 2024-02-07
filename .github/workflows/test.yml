@@ -82,4 +82,4 @@ jobs:
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
           image_url: ${{ env.IMAGE_URL }}:${{ github.sha }}
-          version: ${{ vars.ENV }}
+          version: mpc-${{ vars.ENV }}
