@@ -15,7 +15,7 @@ def country_page(request):
     filter_data = request.GET.get("filter_data") or ""
     countries = Country.objects.all().order_by(sort_by).filter(common_name__contains=filter_data)
 
-    per_page = request.GET.get("per_page") or "20"
+    per_page = request.GET.get("per_page") or "15"
     paginator = Paginator(countries, per_page)
 
     index = request.GET.get("index")
@@ -29,7 +29,7 @@ def country_page(request):
     page_obj = paginator.get_page(page_number)
     item_counter = (page_obj.number - 1) * paginator.per_page
 
-    per_page_options = sorted([15, 20, 40])
+    per_page_options = sorted([10, 15, 20])
     return render(request, 'most_populated_cities_main/table_countries.html',
                   context={'page_obj': page_obj, 'item_counter': item_counter,
                            'per_page': per_page, 'sort_by': sort_by,
