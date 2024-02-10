@@ -20,7 +20,28 @@ body {
 .footer {
     color: whitesmoke;
     background-color: slategrey;
-    height: 40px;
+    align-items: center;
+}
+
+.footer {
+    height: 30px;
+}
+
+.header {
+    height: 50px;
+    display: flex;
+    padding: 0px 20px;
+}
+
+.header > a {
+    text-decoration: none;
+    color: #eaeaea;
+    margin-right: 14px;
+}
+
+.header > a.logo {
+    color: white;
+    font-weight: 600;
 }
 
 .content {
@@ -62,7 +83,6 @@ button.sort_btn {
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    /*color: lightgray;*/
     color: #484848;
 }
 
