@@ -39,8 +39,7 @@ table {
 
 table, th, td {
     border-collapse: collapse;
-    border: 1px solid white;
-    padding: 3px;
+    border: 1px solid ghostwhite;
 }
 
 tr:nth-child(even) {
@@ -49,10 +48,12 @@ tr:nth-child(even) {
 
 td, th {
     text-align: left;
+    padding-left: 8px;
+    color: #484848;
 }
 
 th {
-    background-color: lightslategrey;
+    background-color: #c7cee1;
 }
 
 button.sort_btn {
@@ -60,4 +61,11 @@ button.sort_btn {
     border: none;
     font-size: 16px;
     font-weight: 600;
+    cursor: pointer;
+    /*color: lightgray;*/
+    color: #484848;
+}
+
+tr {
+    height: 35px;
 }
