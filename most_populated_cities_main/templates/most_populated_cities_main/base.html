@@ -18,8 +18,10 @@
     <div class="header">
         <div class="header-left">
             <a href="/" class="header-logo"><img src="{% static 'img/city-buildings-svgrepo-com-fill-white.svg' %}" height="35" alt="" loading="lazy"></a>
-            <a href="/">Cities</a>
-            <a href="/countries">Countries</a>
+            <a href="/" {% if request.resolver_match.url_name == 'cities' %}class="nav-active"{% endif %}>
+                Cities</a>
+            <a href="/countries" {% if request.resolver_match.url_name == 'countries' %}class="nav-active"{% endif %}>
+                Countries</a>
         </div>
         <div class="header-right">
             {% block header-filter %}

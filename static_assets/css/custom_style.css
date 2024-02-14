@@ -53,6 +53,11 @@ body {
     margin: 0 7px;
 }
 
+.header a.nav-active {
+    color: white;
+    font-weight: 600;
+}
+
 .header form {
     margin: 0 7px;
 }
@@ -126,3 +131,4 @@ button.sort_btn {
 tr {
     height: 35px;
 }
+
