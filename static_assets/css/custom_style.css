@@ -30,16 +30,52 @@ body {
 .header {
     height: 50px;
     display: flex;
-    padding: 0px 20px;
+    padding: 0px 30px;
+    justify-content: space-between;
 }
 
-.header > a {
+.header-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    font-size: 15px;
+}
+
+.header a {
     text-decoration: none;
     color: #eaeaea;
-    margin-right: 14px;
+    margin: 0 7px;
 }
 
-.header > a.logo {
+.header form {
+    margin: 0 7px;
+}
+
+.header form input[type="submit"] {
+    height: 33px;
+    width: 55px;
+    font-size: 15px;
+}
+
+.header form input[type="text"] {
+    height: 30px;
+    width: 150px;
+    font-size: 15px;
+}
+
+.header form select {
+    height: 32px;
+    width: 45px;
+    font-size: 14px;
+}
+
+.header-logo {
     color: white;
     font-weight: 600;
 }
@@ -56,6 +92,7 @@ table {
     margin-right: auto;
     width: 60%;
     background-color: #e5e4e4;
+    margin-bottom: 15px;
 }
 
 table, th, td {
