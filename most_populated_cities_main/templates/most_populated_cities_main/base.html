@@ -16,9 +16,15 @@
 </head>
 <body>
     <div class="header">
-        <a href="/" class="logo"><img src="{% static 'img/city-buildings-svgrepo-com-fill-white.svg' %}" height="35" alt="" loading="lazy"></a>
-        <a href="/">Cities</a>
-        <a href="/countries">Countries</a>
+        <div class="header-left">
+            <a href="/" class="header-logo"><img src="{% static 'img/city-buildings-svgrepo-com-fill-white.svg' %}" height="35" alt="" loading="lazy"></a>
+            <a href="/">Cities</a>
+            <a href="/countries">Countries</a>
+        </div>
+        <div class="header-right">
+            {% block header-filter %}
+            {% endblock %}
+        </div>
     </div>
 
     <div class="content">
