@@ -5,26 +5,7 @@ Countries
 {% endblock %}
 
 {% block header-filter %}
-<form action="{% url 'most_populated_cities_main:countries' %}">
-    Items on page:
-    <select name="per_page">
-        {% for opt in per_page_options %}
-        <option value="{{ opt }}" {% if per_page == opt|stringformat:"i" %}selected{% endif %}>{{ opt }}</option>
-        {% endfor %}
-    </select>
-    <input type="submit" value="show">
-    <input type="hidden" name="page" value="{{ page_obj.number }}">
-    <input type="hidden" name="index" value="{{ page_obj.start_index }}">
-    <input type="hidden" name="sort_by" value="{{ sort_by }}">
-    <input type="hidden" name="filter_data" value="{{ filter_data }}">
-</form>
-<form action="{% url 'most_populated_cities_main:countries' %}">
-    <input type="text" placeholder="type to filter" name="filter_data" id="filter_data" value="{{ filter_data }}">
-    <input type="submit" value="filter">
-    <input type="hidden" name="page" value="{{ page_obj.number }}">
-    <input type="hidden" name="sort_by" value="{{ sort_by }}">
-    <input type="hidden" name="per_page" value="{{ per_page }}">
-</form>
+    {% include 'most_populated_cities_main/auxiliary/table_filters.html' %}
 {% endblock %}
 
 {% block content %}
