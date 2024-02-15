@@ -14,7 +14,7 @@ Countries
         <tr>
             <th>№</th>
             <th>
-                <form action="{% url 'most_populated_cities_main:'|add:request.resolver_match.url_name %}">
+                <form action="{{ request.path }}">
                     <button class="sort_btn" >Common Name
                         {% if sort_by == "common_name" %} v
                             <input type="hidden" name="sort_by" value="-common_name">
@@ -28,7 +28,7 @@ Countries
                 </form>
             </th>
             <th>
-                <form action="{% url 'most_populated_cities_main:'|add:request.resolver_match.url_name %}">
+                <form action="{{ request.path }}">
                     <button class="sort_btn" >Continent
                         {% if sort_by == "continent" %} v
                             <input type="hidden" name="sort_by" value="-continent">
@@ -44,7 +44,7 @@ Countries
                 </form>
             </th>
             <th>
-                <form action="{% url 'most_populated_cities_main:'|add:request.resolver_match.url_name %}">
+                <form action="{{ request.path }}">
                     <button class="sort_btn" >Region
                         {% if sort_by == "region" %} v
                             <input type="hidden" name="sort_by" value="-region">

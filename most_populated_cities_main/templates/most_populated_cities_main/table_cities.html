@@ -14,7 +14,7 @@ Most populated cities
         <tr>
             <th>№</th>
             <th>
-                <form action="{% url 'most_populated_cities_main:'|add:request.resolver_match.url_name %}">
+                <form action="{{ request.path }}">
                     <button class="sort_btn" >Name
                         {% if sort_by == "name" %} v
                             <input type="hidden" name="sort_by" value="-name">
@@ -30,7 +30,7 @@ Most populated cities
                 </form>
             </th>
             <th>
-                <form action="{% url 'most_populated_cities_main:'|add:request.resolver_match.url_name %}">
+                <form action="{{ request.path }}">
                     <button class="sort_btn" >Population
                         {% if sort_by == "population_23" %} v
                             <input type="hidden" name="sort_by" value="-population_23">
@@ -44,7 +44,7 @@ Most populated cities
                 </form>
             </th>
             <th>
-                <form action="{% url 'most_populated_cities_main:'|add:request.resolver_match.url_name %}">
+                <form action="{{ request.path }}">
                     <button class="sort_btn" >Country
                         {% if sort_by == "country__common_name" %} v
                             <input type="hidden" name="sort_by" value="-country__common_name">
@@ -60,7 +60,7 @@ Most populated cities
                 </form>
             </th>
             <th>
-                <form action="{% url 'most_populated_cities_main:'|add:request.resolver_match.url_name %}">
+                <form action="{{ request.path }}">
                     <button class="sort_btn" >Continent
                         {% if sort_by == "country__continent" %} v
                             <input type="hidden" name="sort_by" value="-country__continent">
@@ -76,7 +76,7 @@ Most populated cities
                 </form>
             </th>
             <th>
-                <form action="{% url 'most_populated_cities_main:'|add:request.resolver_match.url_name %}">
+                <form action="{{ request.path }}">
                     <button class="sort_btn" >Region
                         {% if sort_by == "country__region" %} v
                             <input type="hidden" name="sort_by" value="-country__region">
