@@ -25,6 +25,14 @@ body {
 
 .footer {
     height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer a {
+    margin: 0 4px;
+    line-height: 0;
 }
 
 .header {
