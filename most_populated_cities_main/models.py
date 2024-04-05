@@ -73,6 +73,15 @@ class City(models.Model):
     population_23 = models.PositiveIntegerField(null=False)
     population_22 = models.PositiveIntegerField(null=False)
 
+    @property
+    def humanized_pop(self):
+        num = float('{:.3g}'.format(self.population_23))
+        magnitude = 0
+        while abs(num) >= 1000:
+            magnitude += 1
+            num /= 1000.0
+        return '{}{}'.format('{:f}'.format(num).rstrip('0').rstrip('.'), ['', ' K', ' M', ' B', ' T'][magnitude])
+
     def __str__(self):
         return f"{self.name} ({self.country.common_name})"
 

@@ -98,7 +98,7 @@ Most populated cities
         <tr>
             <td>{{ item_counter|add:forloop.counter }}</td>
             <td>{{ city.name }}</td>
-            <td>{{ city.population_23 }}</td>
+            <td>{{ city.humanized_pop }}</td>
             <td><span class="fi fi-xx fi-{{city.country.alpha2_code}}"></span> {{ city.country.common_name }}</td>
             <td>{{ city.country.continent_name }}</td>
             <td>{{ city.country.region_name }}</td>
