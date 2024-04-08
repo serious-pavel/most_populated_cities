@@ -47,7 +47,7 @@ class Country(models.Model):
     numeric_code = models.PositiveSmallIntegerField(validators=[MaxValueValidator(1000)], null=False, unique=True)
     alpha2_code = models.CharField(max_length=2, null=False, unique=True)
     alpha3_code = models.CharField(max_length=3, null=False, unique=True)
-    official_name = models.CharField(max_length=50, null=False, unique=True)
+    official_name = models.CharField(max_length=60, null=False, unique=True)
     common_name = models.CharField(max_length=50, null=False, unique=True)
     continent = models.CharField(max_length=2, choices=Continent.choices, default=Continent.ANTARCTICA, null=False)
     region = models.CharField(max_length=4, choices=Region.choices, default=Region.ANTARCTICA, null=False)
