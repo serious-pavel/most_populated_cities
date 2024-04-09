@@ -12,7 +12,7 @@ def render_paginated_table(request, queryset, template_name, filter_field, defau
     page_number = request.GET.get("page")
     per_page = request.GET.get("per_page", "15")
 
-    objects = queryset.order_by(sort_by).filter(**{filter_field + '__contains': filter_data})
+    objects = queryset.order_by(sort_by).filter(**{filter_field + '__icontains': filter_data})
     paginator = Paginator(objects, per_page)
 
     if index:
