@@ -32,8 +32,6 @@ jobs:
           echo "DB_USER=${{ secrets.DB_USER }}" >> .env
           echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
           echo "DB_HOST=${{ secrets.DB_HOST }}" >> .env
-          echo "CREDENTIALS_FILE=${{ vars.CREDENTIALS_FILE }}" >> .env
-          echo "${{ secrets.GCP_SA_KEY }}" > ${{ vars.CREDENTIALS_FILE }}
           echo "DEBUG=${{ vars.DEBUG }}" >> .env
       - name: Authenticate Google Cloud SDK
         uses: google-github-actions/auth@v2
