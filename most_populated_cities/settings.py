@@ -13,7 +13,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import environ
 import os
 from pathlib import Path
-from google.oauth2 import service_account
+# from google.oauth2 import service_account
+from google.auth import compute_engine
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -126,15 +128,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+credentials = compute_engine.Credentials()
+
 STORAGES = {
     "staticfiles": {
         "BACKEND": "storages.backends.gcloud.GoogleCloudStorage",
         "OPTIONS": {
             'bucket_name': 'most_populated_cities',
             'location': 'static',
-            'credentials': service_account.Credentials.from_service_account_file(
-                env.str('CREDENTIALS_FILE'),
-            )
+            'credentials': credentials,
         },
     },
 }
