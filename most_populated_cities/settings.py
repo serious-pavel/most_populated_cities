@@ -133,7 +133,7 @@ STORAGES = {
             'bucket_name': 'most_populated_cities',
             'location': 'static',
             'credentials': service_account.Credentials.from_service_account_file(
-                env.str('GOOGLE_APPLICATION_CREDENTIALS'),
+                env.str('CREDENTIALS_FILE'),
             )
         },
     },
