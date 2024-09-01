@@ -137,6 +137,7 @@ STORAGES = {
             'bucket_name': 'most_populated_cities',
             'location': 'static',
             'credentials': credentials,
+            'querystring_auth': False,
         },
     },
 }
