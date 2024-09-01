@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import environ
 import os
 from pathlib import Path
+from google.oauth2 import service_account
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -131,13 +132,16 @@ STORAGES = {
         "OPTIONS": {
             'bucket_name': 'most_populated_cities',
             'location': 'static',
+            'credentials': service_account.Credentials.from_service_account_file(
+                env.str('GOOGLE_APPLICATION_CREDENTIALS'),
+            )
         },
     },
 }
 
 # STATIC_URL = 'static/'
 
-# STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = None
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static_assets',
