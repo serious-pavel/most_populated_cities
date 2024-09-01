@@ -121,12 +121,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-if os.path.exists('dev/CREDENTIALS_FILE'):
-    from google.oauth2 import service_account
-    credentials = service_account.Credentials.from_service_account_file('dev/CREDENTIALS_FILE')
-else:
+if not os.path.exists('dev/CREDENTIALS_FILE'):
     from google.auth import compute_engine
     credentials = compute_engine.Credentials()
+else:
+    from google.oauth2 import service_account
+    credentials = service_account.Credentials.from_service_account_file('dev/CREDENTIALS_FILE')
 
 STORAGES = {
     "staticfiles": {
