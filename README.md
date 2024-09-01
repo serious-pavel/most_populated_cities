@@ -1,6 +1,6 @@
 # Most Populated Cities
 
-A small [website](https://populated-world.ey.r.appspot.com/) featuring the most densely populated cities and countries in the world in the form of convenient tables with sorting and filtering.
+A small [website](https://serious-site.ey.r.appspot.com) featuring the most densely populated cities and countries in the world in the form of convenient tables with sorting and filtering.
 
 ## Sources
 Data set: [World Most Populated City 2022 & 2023](https://www.kaggle.com/code/sachinmeena04/world-most-populated-city-2022-2023)
