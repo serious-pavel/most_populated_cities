@@ -14,6 +14,7 @@ import environ
 import os
 from pathlib import Path
 from google.auth import compute_engine
+# from google.oauth2 import service_account
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -122,6 +123,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+# credentials = service_account.Credentials.from_service_account_file('dev/CREDENTIALS_FILE')
 credentials = compute_engine.Credentials()
 
 STORAGES = {
