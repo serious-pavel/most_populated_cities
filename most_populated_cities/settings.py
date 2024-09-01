@@ -13,8 +13,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import environ
 import os
 from pathlib import Path
-# from google.oauth2 import service_account
-from google.auth import compute_engine
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -128,7 +126,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-credentials = compute_engine.Credentials()
+if os.getenv('GAE_APPLICATION'):
+    from google.auth import compute_engine
+    credentials = compute_engine.Credentials()
+else:
+    from google.oauth2 import service_account
+    credentials = service_account.Credentials.from_service_account_file('dev/CREDENTIALS_FILE')
 
 STORAGES = {
     "staticfiles": {
@@ -137,18 +140,17 @@ STORAGES = {
             'bucket_name': 'most_populated_cities',
             'location': 'static',
             'credentials': credentials,
-            'querystring_auth': False,
+            'querystring_auth': False,  # Avoid need to sign files in case of using public access (read)
         },
     },
 }
-
-# STATIC_URL = 'static/'
 
 STATIC_ROOT = None
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static_assets',
 ]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
